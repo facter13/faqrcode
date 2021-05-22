@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head id="head">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="body" class="page">
+    </div>
+    <script type="text/html" id="head-temp">
+        <title>{{title}}</title>
+		<link rel="icon" href="{{icon}}">
+    </script>
+    <script type="text/html" id="body-temp">
+		<div class="alert-box text-center" id="projs">
+			<div class="group column alert-cont shadow">
+				<div class="card-out">Projects</div>
+				<div class="card-out" style="overflow:auto;">
+					<div class="group column flex-center shadow">
+						{{each projects}}
+							<a href="{{$value.link}}" target="_blank" class="btn-out" style="width:100%;">{{$value.name}}</a>
+						{{/each}}
+					</div>
+				</div>
+				<div class="group">
+					<a class="btn-out" onclick="hidealert('projs')">Close</a>
+				</div>
+			</div>
+		</div>
+		<header id="header" class="sticktop shadow text-center" >
+			<a href="{{home}}" class="btn-out">{{name}}</a>
+			<a class="btn-out" onclick="showalert('projs')">Projects</a>
+		</header>
+		<main id="main" class="text-center">
+			<h1>Faqrcode - {{name}}</h1>
+			<div class="card-out text-center shadow" style="min-width:60%">
+				<textarea class="text-out" id="text" placeholder="请输入内容" style="resize: vertical;width:100%;"></textarea>
+				<br>
+				<button onclick="make()" id="make" class="btn-out">MAKE</button>
+				<div id="qrcode" style="margin: auto;width: max-content;margin-top: 10px;"></div>
+			</div>
+		</main>
+		<footer id="footer" class="shadow stickbot text-center">
+			Powered By Wsyear&Wdssean<br>
+			&COPY{{author}}
+		</footer>
+    </script>
+    <script src="/config.js"></script>
+    <script src="/packs/template-web.js"></script>
+    <script src="/packs/template.js"></script>
+    <script src="/packs/marked.min.js"></script>
+    <script src="/style/main.js"></script>
+	<link rel="stylesheet" href="/style/main.css">
+	<link rel="stylesheet" href="/style/costumize.css">
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            options:{
+                enableMenu: false
+            }
+        }
+    </script>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script>
+		settitle(config.name);
+		setmd();
+		init();
+		startcgtt(":)","你不要我了啊");
+    </script>
+	<script>
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+			width:100,
+			height:100
+		});
+		function make() {
+			qrcode.makeCode(document.getElementById("text").value);
+		}
+		make();
+	</script>
+</body>
+
+</html>
