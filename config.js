@@ -2,12 +2,13 @@ config={
     "name":"Facter",
     "description":"Facter's Website",
     "author":"Facter",
-	"home":"http://facter.ml",
+	"home":"http://facter.vercel.app",
     "profile":`### Just for fun!`,
 	"icon":"https://7.dusays.com/2021/01/17/2506132b61176.ico",
 	"avatar":"https://7.dusays.com/2021/01/17/38d13a4ddef29.jpg",
 	"appID":"SQUowcN1iiECxY6buDaNz8NV-gzGzoHsz",
 	"appKey":"w5SgjnKSPFk8XUcThk7r4fUV",
+	"bgimage":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/045.jpg",
 	"projects":[
 		{
 			"name":"Faqrcode",

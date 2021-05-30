@@ -50,3 +50,6 @@ function init(){
 function setmd(){
 	template.defaults.imports.markdown = marked;
 }
+function setbg(){
+	document.body.background=config.bgimage;
+}
