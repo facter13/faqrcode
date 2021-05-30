@@ -12,7 +12,7 @@ config={
 	"projects":[
 		{
 			"name":"Faqrcode",
-			"link":"http://faqrcode.facter.ml"
+			"link":"http://faqrcode.vercel.app"
 		}
 	],
 	"contact":[
